@@ -1,2 +1,6 @@
 # Challenge #1 🤑
-An Android app that uses the Stripe SDK to simulate digital payments...
+An Android app that uses the Stripe SDK (Android) to simulate digital payments...
+
+# The Screenshots
+
+# The Test Results
