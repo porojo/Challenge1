@@ -7,9 +7,9 @@
 
 - Each of the modules plays the following roles to ensure the goals of Modularisation are met:
 
-| Module | Type | Dependencies | Purpose|
+| Module | Module Type | Dependencies | Purpose |
 |--------|------|--------------|--------|
-| :data  | android-library | N/A | It provides data from different sources... |
-| :domain | android-library | :data | It aggregates data from the data sources... |
-| :features | android-library | :domain | It consists of the Screens, UI Components, and ViewModels and is used to present the data to the user as well as receive user input... |
-| :app | android-application | :features | It builds, runs the application, and contains the Application class and MainActivity... |
+| :data  | android-library | N/A | It is the source of data for the app... |
+| :domain | android-library | :data | It aggregates data from the data source... |
+| :features | android-library | :domain | It is used to present the data to the user as well as receive user input in a stateful manner... |
+| :app | android-application | :features | It builds and runs the application as well as providing global configurations... |
