@@ -8,7 +8,7 @@
 
 | Module | Module Type | Dependencies | Purpose |
 |--------|------|--------------|--------|
-| :data  | android-library | N/A | It is the source of data for the app... |
-| :domain | android-library | :data | It aggregates data from the data source... |
+| :data  | android-library | domain | It is the source of data for the app... |
+| :domain | android-library | N/A | It aggregates data from the data source... |
 | :features | android-library | :domain | It is used to present the data to the user as well as receive user input in a stateful manner... |
 | :app | android-application | :features | It builds and runs the application as well as providing global configurations... |
