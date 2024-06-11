@@ -1,12 +1,9 @@
 # The Modularisation Structure
 - Challenge #1 has been modularised based on the following structure:
 
-<center>
-  
-  ![Challenge #1 (Modularisation)](https://github.com/porojo/Challenge1/assets/55001497/6d0283ca-c277-4d27-ba16-78b8da4ed421)
-  
-</center>
-
+  <div style="text-align: center;">
+  <img src="https://github.com/porojo/Challenge1/assets/55001497/98b4cb63-6a10-49ac-b62f-d06a68fedfcc" alt="Description of the image">
+</div>
 
 - Each of the modules plays the following roles to ensure the goals of Modularisation are met:
 
