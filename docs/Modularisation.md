@@ -1,5 +1,4 @@
 # The Modularisation Structure
-- Challenge #1 has been modularised based on the following structure:
 
   <div style="text-align: center;">
   <img src="https://github.com/porojo/Challenge1/assets/55001497/98b4cb63-6a10-49ac-b62f-d06a68fedfcc" alt="Description of the image">
