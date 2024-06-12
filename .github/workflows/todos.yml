@@ -1,0 +1,9 @@
+name: Convert Todos to Issues
+on: push
+jobs:
+  convert-todos-to-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: TODO to Issue
+        uses: alstr/todo-to-issue-action@v4.6.8
+        id: todo
