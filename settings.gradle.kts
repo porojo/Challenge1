@@ -22,3 +22,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "MoneySwift"
 include(":app")
+include(":modules")
+include(":modules:data")
+include(":modules:domain")
