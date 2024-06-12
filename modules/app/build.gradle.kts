@@ -51,6 +51,9 @@ android {
 
 dependencies {
 
+    implementation(projects.modules.features)
+    implementation(projects.modules.ui)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
