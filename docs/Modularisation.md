@@ -4,11 +4,11 @@
 
 | Module    | Module Type         | Dependencies | Purpose                                                                                          |
 |-----------|---------------------|--------------|--------------------------------------------------------------------------------------------------|
-| :source | android-library | N/A | It acts as the source of data by providing and implementing both the remote and local data sources... |
-| :data | android-library | :source | It abstracts the data sources and their implementation from :feature by providing and implementing repositories which have access to the data sources... |
+| :source | android-library | N/A | It acts as the source of data by providing and implementing both the Remote and Local Data Sources... |
+| :data | android-library | :source | It abstracts the Data Sources and their implementation from :feature by providing and implementing Repositories which have access to the Data Sources... |
 | :feature | android-library | :data | It is used to present the data to the user (Screens) as well as respond to user input in a stateful manner (ViewModels)... |
-| :ui | android-library | N/A | It contains the shared UI Elements and Theme to be used by :feature and :app... |
-| :app | android-application | :features | It builds and runs the application as well as providing global configurations... |
+| :ui | android-library | N/A | It contains the Shared UI Elements and Theme to be used by :feature and :app... |
+| :app | android-application | :features | It builds and runs the application (MainActivity) as well as providing global configurations (Application)... |
 
 # The Benefits
 
