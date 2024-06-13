@@ -1,11 +1,12 @@
 | The Modularisation Structure |
 |------------------------------|
-| <img src="https://github.com/porojo/Challenge1/assets/55001497/ed709eab-da8c-46b6-b7d8-407e9e4b3079" alt="Challenge #1 (The Modularisation Structure)" width="300"> |
+| <img src="https://github.com/porojo/Challenge1/assets/55001497/aacd4576-c705-416e-9a27-7b2f138dc5a6" alt="Challenge #1 (The Modularisation Structure)" width="300"> |
 
 | Module    | Module Type         | Dependencies | Purpose                                                                                          |
 |-----------|---------------------|--------------|--------------------------------------------------------------------------------------------------|
-| :data | android-library | N/A | It is the source of data for the app and contains both public (expose data to the rest of the app) and private (retrieve data and act as single source of truth) repositories... |
-| :features | android-library | :data | It is used to present the data to the user as well as receive user input in a stateful manner... |
+| :source | android-library | N/A | It acts as the source of data by providing and implementing both the remote and local data sources... |
+| :data | android-library | :source | It abstracts the data sources and their implementation from :feature by providing and implementing repositories which have access to the data sources... |
+| :feature | android-library | :data | It is used to present the data to the user (Screens) as well as respond to user input in a stateful manner (ViewModels)... |
 | :ui | android-library | N/A | It contains the shared UI Elements and Theme to be used by :feature and :app... |
 | :app | android-application | :features | It builds and runs the application as well as providing global configurations... |
 
