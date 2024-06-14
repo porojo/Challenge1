@@ -1,5 +1,5 @@
 [versions]
-agp = "8.4.2"
+agp = "8.5.0"
 kotlin = "2.0.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -61,7 +61,7 @@ koin_compose= {module = "io.insert-koin:koin-androidx-compose"}
 
 # other
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
-stripe_android = {module = "om.stripe:stripe-android", version.ref = "stripe"}
+stripe_android = {module = "com.stripe:stripe-android", version.ref = "stripe"}
 
 [bundles]
 voyager = [
