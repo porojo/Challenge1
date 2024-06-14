@@ -22,6 +22,9 @@ koin_bom = "3.5.6"
 voyager = "1.0.0-rc10"
 timber = "5.0.1"
 
+#Stripe SDK
+stripe = "20.45.0"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -58,6 +61,7 @@ koin_compose= {module = "io.insert-koin:koin-androidx-compose"}
 
 # other
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+stripe_android = {module = "om.stripe:stripe-android", version.ref = "stripe"}
 
 [bundles]
 voyager = [
