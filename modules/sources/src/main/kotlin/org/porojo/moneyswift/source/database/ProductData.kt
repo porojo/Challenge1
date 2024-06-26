@@ -7,45 +7,27 @@ object ProductData {
     val productEntityLists = listOf(
         ProductEntity(
             productId = 1,
-            productThumbnail = R.drawable.a5,
-            productName = "Audi A5",
-            productPrice = 49000
+            productThumbnail = R.drawable.google_pixel_8_pro,
+            productName = "Google Pixel 8 Pro",
+            productPrice = 98000
         ),
         ProductEntity(
             productId = 2,
-            productThumbnail = R.drawable.a7,
-            productName = "Audi A7",
-            productPrice = 77000
+            productThumbnail = R.drawable.google_pixel_buds_pro,
+            productName = "Google Pixel Buds Pro",
+            productPrice = 23500
         ),
         ProductEntity(
             productId = 3,
-            productThumbnail = R.drawable.q8,
-            productName = "Audi Q8",
-            productPrice = 77777
+            productThumbnail = R.drawable.google_pixel_tablet,
+            productName = "Google Pixel Tablet",
+            productPrice = 95000
         ),
         ProductEntity(
             productId = 4,
-            productThumbnail = R.drawable.rs5,
-            productName = "Audi RS5",
-            productPrice = 84000
-        ),
-        ProductEntity(
-            productId = 5,
-            productThumbnail = R.drawable.rs7,
-            productName = "Audi RS7",
-            productPrice = 140000
-        ),
-        ProductEntity(
-            productId = 6,
-            productThumbnail = R.drawable.s7,
-            productName = "Audi S7",
-            productPrice = 91000
-        ),
-        ProductEntity(
-            productId = 7,
-            productThumbnail = R.drawable.s8,
-            productName = "Audi S8",
-            productPrice = 123456
+            productThumbnail = R.drawable.google_pixel_watch_2,
+            productName = "Google Pixel Watch 2",
+            productPrice = 77000
         )
     )
 }

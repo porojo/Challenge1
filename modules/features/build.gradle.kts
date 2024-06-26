@@ -46,4 +46,6 @@ dependencies {
     //compose
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
+
+    implementation(dependencyNotation = libs.kotlinx.coroutines)
 }
