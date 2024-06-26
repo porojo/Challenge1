@@ -1,15 +1,28 @@
 package repositories
 
-import mapper.toDomain
-import model.ProductDomain
-import org.porojo.moneyswift.source.ProductDAO
-import org.porojo.moneyswift.source.products
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
+import model.Product
+import org.porojo.moneyswift.source.dao.ProductDAO
 
 class ProductRepoImpl(
-    private val productDAO: ProductDAO
+    private val productDAO: ProductDAO,
+    private val coroutineDispatcher: CoroutineDispatcher
 ) : ProductRepo {
-    override suspend fun getListOfProducts(): List<ProductDomain> {
-        val productList = productDAO.getProducts()
-        return products.map { it.toDomain() }
+    override suspend fun getListOfProducts(): Flow<List<Product>> {
+        return withContext(context = coroutineDispatcher) {
+            productDAO.getProducts().map { productList ->
+                productList.map { product ->
+                    Product(
+                        productId = product.productId,
+                        productName = product.productName,
+                        productPrice = product.productPrice,
+                        productThumbnail = product.productThumbnail
+                    )
+                }
+            }
+        }
     }
 }

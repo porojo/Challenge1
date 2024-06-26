@@ -1,7 +1,8 @@
 package repositories
 
-import model.ProductDomain
+import kotlinx.coroutines.flow.Flow
+import model.Product
 
 interface ProductRepo {
-    suspend fun getListOfProducts(): List<ProductDomain>
+    suspend fun getListOfProducts(): Flow<List<Product>>
 }
