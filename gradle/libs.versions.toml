@@ -1,5 +1,5 @@
 [versions]
-agp = "8.5.0"
+agp = "8.4.1"
 kotlin = "2.0.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -50,6 +50,7 @@ kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 # voyager
 voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
 voyager-transitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyager" }
+voyager-androidx = { module = "cafe.adriel.voyager:voyager-androidx", version.ref = "voyager" }
 
 #DI
 koin_bom = {module = "io.insert-koin:koin-bom", version.ref = "koin_bom"}
@@ -63,7 +64,7 @@ stripe_android = {module = "com.stripe:stripe-android", version.ref = "stripe"}
 
 [bundles]
 voyager = [
-    "voyager-navigator", "voyager-transitions"
+    "voyager-navigator", "voyager-transitions", "voyager-androidx"
 ]
 
 koin = ["koin_android", "koin_compose", "koin_core"]
