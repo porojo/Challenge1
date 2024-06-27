@@ -8,7 +8,7 @@ import cafe.adriel.voyager.koin.koinScreenModel
 import org.porojo.moneyswift.features.product.screen_model.ProductScreenModel
 import org.porojo.moneyswift.features.product.screen_model.ProductScreenUiState
 
-object ProductScreen : Screen {
+class ProductScreen : Screen {
 
     @Composable
     override fun Content() {
