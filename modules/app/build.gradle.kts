@@ -54,6 +54,9 @@ dependencies {
     implementation(projects.modules.features)
     implementation(projects.modules.ui)
 
+    //voyager
+    implementation(libs.bundles.voyager)
+
     implementation(libs.bundles.koin)
 
     implementation(libs.androidx.core.ktx)

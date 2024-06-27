@@ -1,4 +1,4 @@
-package org.porojo.moneyswift.features.product.screen
+package org.porojo.moneyswift.features.product.screen_model
 
 import cafe.adriel.voyager.core.model.StateScreenModel
 import cafe.adriel.voyager.core.model.screenModelScope
@@ -10,7 +10,6 @@ import repositories.ProductRepo
 data class ProductScreenUiState(
     val screenUiState: ScreenUiState<List<Product>> = ScreenUiState.Loading
 )
-
 
 class ProductScreenModel(
     private val productRepo: ProductRepo
