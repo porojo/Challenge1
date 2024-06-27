@@ -14,16 +14,9 @@ class ProductViewModel(
     private val productRepo: ProductRepo
 ) : ViewModel() {
 
-    private val _productScreenState: MutableStateFlow<ProductScreenState> = MutableStateFlow(value = ProductScreenState())
-    val productScreenState: StateFlow<ProductScreenState> = _productScreenState.asStateFlow()
-
     private fun getProducts() {
         viewModelScope.launch {
-            productRepo.getListOfProducts().collect { productList ->
-                _productScreenState.update {
-                    it.copy(products = productList)
-                }
-            }
+
         }
     }
 

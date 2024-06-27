@@ -1,4 +1,4 @@
-package org.porojo.moneyswift
+package org.porojo.moneyswift.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
