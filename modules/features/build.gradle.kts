@@ -53,5 +53,13 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
+    //voyager
+    implementation(libs.bundles.voyager)
+
+    //koin
+    implementation(platform(libs.koin.bom))
+    implementation(libs.bundles.koin)
+
+
     implementation(dependencyNotation = libs.kotlinx.coroutines)
 }

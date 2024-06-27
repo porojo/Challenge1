@@ -19,7 +19,7 @@ kotlinx-coroutines = "1.8.0"
 koinVersion = "3.5.6"
 
 #Other
-voyager = "1.0.0-rc10"
+voyager = "1.1.0-beta02"
 timber = "5.0.1"
 
 #Stripe SDK
@@ -50,10 +50,11 @@ kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 # voyager
 voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
 voyager-transitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyager" }
-voyager-androidx = { module = "cafe.adriel.voyager:voyager-androidx", version.ref = "voyager" }
+voyager-screenmodel = { module = "cafe.adriel.voyager:voyager-screenmodel", version.ref = "voyager" }
+voyager-koin = { module = "cafe.adriel.voyager:voyager-koin", version.ref = "voyager" }
 
 #DI
-#koin_bom = { module = "io.insert-koin:koin-bom", version.ref = "koin_bom" }
+koin_bom = { module = "io.insert-koin:koin-bom", version.ref = "koinVersion" }
 koin_core= { module = "io.insert-koin:koin-core", version.ref = "koinVersion" }
 koin_android= { module = "io.insert-koin:koin-android", version.ref = "koinVersion" }
 koin_compose= { module = "io.insert-koin:koin-androidx-compose", version.ref = "koinVersion" }
@@ -64,7 +65,7 @@ stripe_android = {module = "com.stripe:stripe-android", version.ref = "stripe"}
 
 [bundles]
 
-voyager = ["voyager-navigator", "voyager-transitions", "voyager-androidx"]
+voyager = ["voyager-navigator", "voyager-transitions", "voyager-screenmodel", "voyager-koin"]
 
 koin = ["koin_android", "koin_compose", "koin_core"]
 
