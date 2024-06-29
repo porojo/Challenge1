@@ -7,8 +7,7 @@ sealed class SharedScreen : ScreenProvider {
 
     data object ProductScreen : SharedScreen()
 
-    data class CheckoutScreen(val product: Product, val onPaymentClicked: () -> Unit) :
-        SharedScreen()
+    data class CheckoutScreen(val product: Product) : SharedScreen()
 
     data object ConfirmationScreen : SharedScreen()
 

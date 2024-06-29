@@ -26,7 +26,7 @@ import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import model.Product
 
-class CheckoutScreen : Screen {
+class CheckoutScreen(val product: Product) : Screen {
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
@@ -60,7 +60,10 @@ class CheckoutScreen : Screen {
 }
 
 @Composable
-fun CheckoutScreenContent(modifier: Modifier, product: Product) {
+fun CheckoutScreenContent(
+    modifier: Modifier,
+    product: Product // TODO : change this to view model
+) {
     Column(
         modifier = modifier.fillMaxSize().padding(bottom = 21.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -94,9 +97,7 @@ fun CheckoutScreenContent(modifier: Modifier, product: Product) {
 
         Button(
             modifier = modifier.fillMaxWidth(),
-            onClick = {
-                      TODO()
-            },
+            onClick = {},
             colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary)
         ) {
             Text(
