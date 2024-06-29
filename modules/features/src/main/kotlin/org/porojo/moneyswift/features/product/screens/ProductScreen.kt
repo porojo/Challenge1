@@ -52,7 +52,10 @@ fun ProductScreenContent(state: ProductScreenUiState, navigateToCheckoutScreen: 
         },
         content = { paddingValues ->
             Column(modifier = Modifier.fillMaxWidth()) {
-                AnimatedContent(state.screenUiState) { value ->
+                AnimatedContent(
+                    targetState = state.screenUiState,
+                    label = "products_animation"
+                ) { value ->
                     when (value) {
                         is ScreenUiState.Error -> {
                             Column(
@@ -89,8 +92,10 @@ fun ProductScreenContent(state: ProductScreenUiState, navigateToCheckoutScreen: 
                                 }
                             } else {
                                 LazyColumn {
-                                    items(data) {product ->
-                                        ProductItem(product = product) { navigateToCheckoutScreen(product) }
+                                    items(data) { product ->
+                                        ProductItem(product = product) {
+                                            navigateToCheckoutScreen(product)
+                                        }
                                     }
                                 }
                             }
