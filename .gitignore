@@ -32,3 +32,6 @@ local.properties
 *.iml
 .externalNativeBuild
 .cxx
+
+# Detekt (Config)
+config
