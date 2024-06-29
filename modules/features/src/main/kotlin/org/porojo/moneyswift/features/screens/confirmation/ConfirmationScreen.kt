@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
@@ -57,17 +58,19 @@ class ConfirmationScreen : Screen {
 @Composable
 fun ConfirmationScreenContent(modifier: Modifier, onHomeClicked: () -> Unit) {
     Column(
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize().testTag(tag = "ConfirmationScreenColumn"),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         Text(
+            modifier = modifier.testTag(tag = "ConfirmationScreenText"),
             text = "Your payment is successful!",
             style = MaterialTheme.typography.bodyLarge,
             fontWeight = FontWeight.Bold
         )
-        Button(onClick = onHomeClicked) {
+        Button(modifier = modifier.testTag(tag = "ConfirmationScreenButton"), onClick = onHomeClicked) {
             Text(
+                modifier = modifier.testTag(tag = "ButtonText"),
                 text = "Home",
                 style = MaterialTheme.typography.labelLarge,
                 fontWeight = FontWeight.Bold
