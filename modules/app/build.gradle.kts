@@ -54,11 +54,6 @@ dependencies {
     implementation(projects.modules.features)
     implementation(projects.modules.ui)
 
-    //voyager
-    implementation(libs.bundles.voyager)
-
-    implementation(libs.bundles.koin)
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -75,5 +70,13 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    //voyager
+    implementation(libs.bundles.voyager)
+
+    // koin
+    implementation(libs.bundles.koin)
+
+    // timber
+    implementation(libs.timber)
 
 }
