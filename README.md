@@ -39,5 +39,5 @@ This app has been powered by the following Tools and Libraries:
 |------------|-----------|
 
 ## The Test Results 🧪
-| UI Tests | Unit Tests |
-|----------|------------|
+| UI Tests | Unit Tests | Name of Test |
+|----------|------------|--------------|
