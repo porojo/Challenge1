@@ -1,4 +1,4 @@
-package org.porojo.moneyswift.features.product.screens
+package org.porojo.moneyswift.features.screens.confirmation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,6 +17,7 @@ import androidx.compose.ui.text.font.FontWeight
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
+import org.porojo.moneyswift.features.screens.products.ProductScreen
 
 class ConfirmationScreen : Screen {
 

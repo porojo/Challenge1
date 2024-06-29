@@ -1,4 +1,4 @@
-package org.porojo.moneyswift.features.product.screen_model
+package org.porojo.moneyswift.features.screens.products
 
 import cafe.adriel.voyager.core.model.StateScreenModel
 import cafe.adriel.voyager.core.model.screenModelScope
