@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.koinScreenModel
 import model.Product
+import org.porojo.moneyswift.features.components.PaymentComponent
 
 class CheckoutScreen(val product: Product) : Screen {
 
@@ -40,14 +41,23 @@ class CheckoutScreen(val product: Product) : Screen {
         val screenModel: CheckoutScreenModel = koinScreenModel()
         val state by screenModel.state.collectAsState()
         screenModel.onValueChange(product = product)
-        CheckoutScreenContent(state = state)
+        CheckoutScreenContent(state = state, onClickPay = screenModel::onClickPay)
     }
 
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CheckoutScreenContent(state: CheckoutScreenUiState) {
+fun CheckoutScreenContent(state: CheckoutScreenUiState, onClickPay: () -> Unit) {
+
+    val paymentConfig = state.paymentConfig
+    if (paymentConfig != null)
+        PaymentComponent(
+            publishableKey = paymentConfig.key,
+            customerConfig = paymentConfig.config,
+            paymentIntentClientSecret = paymentConfig.secret
+        )
+
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         containerColor = MaterialTheme.colorScheme.background,
@@ -120,7 +130,7 @@ fun CheckoutScreenContent(state: CheckoutScreenUiState) {
 
                             Button(
                                 modifier = Modifier.fillMaxWidth(),
-                                onClick = {},
+                                onClick = onClickPay,
                                 colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary)
                             ) {
                                 Text(
