@@ -6,4 +6,22 @@ plugins {
     alias(libs.plugins.kotlin.ksp) apply false
     alias(libs.plugins.kotlin.serialization) apply false
     alias(libs.plugins.compose.compiler) apply false
+    id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
+    id("io.gitlab.arturbosch.detekt") version "1.23.1"
+}
+
+subprojects {
+    apply(plugin = "org.jlleitschuh.gradle.ktlint")
+    ktlint {
+        verbose.set(true)
+        android.set(true)
+        filter {
+            exclude("**/generated/**")
+        }
+    }
+}
+
+apply(plugin = "io.gitlab.arturbosch.detekt")
+detekt {
+    parallel = true
 }
