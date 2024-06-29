@@ -27,7 +27,7 @@ import org.porojo.moneyswift.features.product.screen_model.ProductScreenModel
 import org.porojo.moneyswift.features.product.screen_model.ProductScreenUiState
 import org.porojo.moneyswift.features.state.ScreenUiState
 
-object ProductScreen : Screen {
+class ProductScreen : Screen {
 
     @Composable
     override fun Content() {
