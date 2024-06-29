@@ -1,7 +1,7 @@
 # Challenge #1 🤑
 - This is an Android app that uses the Stripe SDK (Android) to simulate digital payments...
 
-## The Architecture
+## The Architecture 🏗️
 - This app is based on the MVVM Architectural Pattern which follows a modularisation structure outlined in /docs/Modularisation.md which features (pun intended) the following modules:
 
 ### :app
@@ -19,7 +19,7 @@
 ### :ui
 - This module provides the reusable UI Components...
 
-## The Libraries
+## The Tools and Libraries 🧰
 - This app has been powered by the following Tools and Libraries:
 
 ### Jetpack Compose
@@ -38,7 +38,3 @@
 | Light Mode | Dark Mode |
 |------------|-----------|
 | ![Light Mode](https://github.com/porojo/Challenge1/assets/55001497/8a3b3155-d997-4a7e-a184-ccee53b57b87) | ![Dark Mode](https://github.com/porojo/Challenge1/assets/55001497/0b8d25eb-2632-4e15-a28c-b57bbedc862f) |
-
-## The Test Results 🧪
-| UI Tests | Unit Tests | Name of Test |
-|----------|------------|--------------|
