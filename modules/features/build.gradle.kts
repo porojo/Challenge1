@@ -40,8 +40,6 @@ dependencies {
 
     implementation(projects.modules.data)
 
-    implementation(libs.bundles.koin)
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -64,6 +62,9 @@ dependencies {
     implementation(platform(libs.koin.bom))
     implementation(libs.bundles.koin)
 
+    // coroutines
+    implementation(libs.kotlinx.coroutines)
 
-    implementation(dependencyNotation = libs.kotlinx.coroutines)
+    // stripe
+    implementation(libs.stripe.android)
 }

@@ -1,4 +1,4 @@
-package org.porojo.moneyswift.features.product.screens
+package org.porojo.moneyswift.features.screens.products
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.layout.Arrangement
@@ -25,8 +25,7 @@ import cafe.adriel.voyager.navigator.LocalNavigator
 import model.Product
 import org.porojo.moneyswift.features.components.ProductItem
 import org.porojo.moneyswift.features.components.TopBar
-import org.porojo.moneyswift.features.product.screen_model.ProductScreenModel
-import org.porojo.moneyswift.features.product.screen_model.ProductScreenUiState
+import org.porojo.moneyswift.features.screens.checkout.CheckoutScreen
 import org.porojo.moneyswift.features.state.ScreenUiState
 
 object ProductScreen : Screen {

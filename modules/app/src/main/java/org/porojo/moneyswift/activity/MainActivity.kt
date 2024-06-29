@@ -5,8 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import cafe.adriel.voyager.navigator.Navigator
-import org.porojo.moneyswift.features.navigation.SharedScreen
-import org.porojo.moneyswift.features.product.screens.ProductScreen
+import org.porojo.moneyswift.features.screens.products.ProductScreen
 import org.porojo.moneyswift.ui.theme.MoneySwiftTheme
 
 class MainActivity : ComponentActivity() {
