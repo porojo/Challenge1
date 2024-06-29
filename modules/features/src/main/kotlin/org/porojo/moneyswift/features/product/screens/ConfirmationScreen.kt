@@ -45,7 +45,7 @@ class ConfirmationScreen : Screen {
             ConfirmationScreenContent(
                 modifier = Modifier.padding(paddingValues = paddingValues),
                 onHomeClicked = {
-                    navigator.push(item = ProductScreen())
+                    navigator.push(item = ProductScreen)
                 }
             )
         }

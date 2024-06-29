@@ -15,8 +15,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MoneySwiftTheme {
-                //Navigator(ProductScreen())
-                Navigator(SharedScreen.CheckoutScreen())
+                Navigator(ProductScreen)
             }
         }
     }

@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 import model.Product
 
 @Composable
-fun ProductDetailsScreenComponent(product: Product, modifier: Modifier = Modifier) {
+fun ProductItem(product: Product, modifier: Modifier = Modifier, onClick: () -> Unit) {
     Column(modifier = modifier.fillMaxSize().padding(16.dp)) {
         Image(
             modifier = Modifier.fillMaxWidth().size(400.dp),
@@ -46,7 +46,7 @@ fun ProductDetailsScreenComponent(product: Product, modifier: Modifier = Modifie
 
         OutlinedButton(
             modifier = Modifier.fillMaxWidth(),
-            onClick = {}
+            onClick = onClick
         ){
             Text("Buy")
         }
