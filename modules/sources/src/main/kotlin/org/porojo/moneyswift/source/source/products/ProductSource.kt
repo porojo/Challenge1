@@ -1,4 +1,4 @@
-package org.porojo.moneyswift.source.source
+package org.porojo.moneyswift.source.source.products
 
 import kotlinx.coroutines.flow.Flow
 import org.porojo.moneyswift.source.model.Product

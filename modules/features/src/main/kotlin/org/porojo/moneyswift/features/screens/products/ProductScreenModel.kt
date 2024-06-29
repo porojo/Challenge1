@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import model.Product
 import org.porojo.moneyswift.features.state.ScreenUiState
-import repositories.ProductRepo
+import repositories.product.ProductRepo
 
 data class ProductScreenUiState(
     val screenUiState: ScreenUiState<List<Product>> = ScreenUiState.Loading
@@ -20,7 +20,7 @@ class ProductScreenModel(
         getProductsListItems()
     }
 
-    private fun getProductsListItems() {
+    fun getProductsListItems() {
         screenModelScope.launch {
             productRepo.getListOfProducts().collect { products ->
                 mutableState.update { it.copy(screenUiState = ScreenUiState.Success(data = products)) }
