@@ -7,7 +7,7 @@ object SuccessScreen : Screen {
 
     @Composable
     override fun Content() {
-        TODO("Not yet implemented")
+
     }
 
 }
