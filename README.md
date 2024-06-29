@@ -37,6 +37,7 @@ This app has been powered by the following Tools and Libraries:
 ## The Screenshots 📱
 | Light Mode | Dark Mode |
 |------------|-----------|
+| ![Light Mode](https://github.com/porojo/Challenge1/assets/55001497/8a3b3155-d997-4a7e-a184-ccee53b57b87) | ![Dark Mode](https://github.com/porojo/Challenge1/assets/55001497/0b8d25eb-2632-4e15-a28c-b57bbedc862f) |
 
 ## The Test Results 🧪
 | UI Tests | Unit Tests | Name of Test |
