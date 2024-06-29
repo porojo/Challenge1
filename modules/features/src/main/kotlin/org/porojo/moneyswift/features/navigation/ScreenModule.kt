@@ -10,8 +10,8 @@ val featureScreenModule = screenModule {
         ProductScreen()
     }
 
-    register<SharedScreen.CheckoutScreen> {
-        CheckoutScreen()
+    register<SharedScreen.CheckoutScreen> { provider ->
+        CheckoutScreen(product = provider.product, onPaymentClicked = provider.onPaymentClicked)
     }
 
     register<SharedScreen.ConfirmationScreen> {
