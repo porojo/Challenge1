@@ -1,11 +1,11 @@
-package repositories
+package repositories.product
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import model.Product
-import org.porojo.moneyswift.source.source.ProductSource
+import org.porojo.moneyswift.source.source.products.ProductSource
 
 class ProductRepoImpl(
     private val productSource: ProductSource,

@@ -1,4 +1,4 @@
-package repositories
+package repositories.product
 
 import kotlinx.coroutines.flow.Flow
 import model.Product

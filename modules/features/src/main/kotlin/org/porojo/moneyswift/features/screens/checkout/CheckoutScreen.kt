@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.CircularProgressIndicator
@@ -31,31 +30,50 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.koinScreenModel
+import cafe.adriel.voyager.navigator.LocalNavigator
+import model.PaymentState
 import model.Product
 import org.porojo.moneyswift.features.components.PaymentComponent
+import org.porojo.moneyswift.features.screens.confirmation.ConfirmationScreen
 
 class CheckoutScreen(val product: Product) : Screen {
 
     @Composable
     override fun Content() {
+        val navigator = LocalNavigator.current
         val screenModel: CheckoutScreenModel = koinScreenModel()
         val state by screenModel.state.collectAsState()
         screenModel.onValueChange(product = product)
-        CheckoutScreenContent(state = state, onClickPay = screenModel::onClickPay)
+        CheckoutScreenContent(
+            state = state,
+            onClickPay = screenModel::onClickPay,
+            onPaymentFinished = screenModel::onPaymentFinished
+        ){
+            navigator?.push(ConfirmationScreen(it))
+        }
     }
 
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CheckoutScreenContent(state: CheckoutScreenUiState, onClickPay: () -> Unit) {
+fun CheckoutScreenContent(
+    state: CheckoutScreenUiState,
+    onClickPay: () -> Unit,
+    onPaymentFinished: (PaymentState) -> Unit,
+    onNavigateToConfirmation: (PaymentState) -> Unit,
+) {
 
-    val paymentConfig = state.paymentConfig
-    if (paymentConfig != null)
+    if (state.paymentState != null) onNavigateToConfirmation(state.paymentState)
+
+    if (state.paymentConfig != null)
         PaymentComponent(
-            publishableKey = paymentConfig.key,
-            customerConfig = paymentConfig.config,
-            paymentIntentClientSecret = paymentConfig.secret
+            publishableKey = state.paymentConfig.publishableKey,
+            customerConfig = state.paymentConfig.customerConfig,
+            paymentIntentClientSecret = state.paymentConfig.paymentIntentClientSecret,
+            onPaymentCancelled = { onPaymentFinished(PaymentState.CANCELLED) },
+            onPaymentFailed = { onPaymentFinished(PaymentState.FAILED) },
+            onPaymentCompleted = { onPaymentFinished(PaymentState.COMPLETED) }
         )
 
     Scaffold(

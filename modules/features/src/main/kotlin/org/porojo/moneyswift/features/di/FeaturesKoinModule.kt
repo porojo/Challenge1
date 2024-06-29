@@ -10,7 +10,7 @@ val featuresKoinModule = module {
         ProductScreenModel(productRepo = get())
     }
     factory {
-        CheckoutScreenModel()
+        CheckoutScreenModel(repository = get())
     }
 
     includes(dataKoinModule)

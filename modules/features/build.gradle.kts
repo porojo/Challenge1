@@ -67,4 +67,7 @@ dependencies {
 
     // stripe
     implementation(libs.stripe.android)
+
+    // timber
+    implementation(libs.timber)
 }
