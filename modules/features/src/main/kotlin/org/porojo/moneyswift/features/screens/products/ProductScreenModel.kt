@@ -20,7 +20,7 @@ class ProductScreenModel(
         getProductsListItems()
     }
 
-    private fun getProductsListItems() {
+    fun getProductsListItems() {
         screenModelScope.launch {
             productRepo.getListOfProducts().collect { products ->
                 mutableState.update { it.copy(screenUiState = ScreenUiState.Success(data = products)) }

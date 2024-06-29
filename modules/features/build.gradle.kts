@@ -67,4 +67,10 @@ dependencies {
 
     // stripe
     implementation(libs.stripe.android)
+
+    // Coroutines Test
+    testImplementation(libs.kotlinx.coroutines.test)
+
+    // Mockk
+    testImplementation(libs.mockk)
 }
