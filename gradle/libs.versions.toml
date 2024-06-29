@@ -23,7 +23,8 @@ voyager = "1.1.0-beta02"
 timber = "5.0.1"
 
 #Stripe SDK
-stripe = "20.45.0"
+stripe-android = "20.45.0"
+stripe-server = "25.3.0"
 
 # Coroutines Test
 coroutinesTestVersion = "1.7.3"
@@ -70,7 +71,8 @@ koin_compose= { module = "io.insert-koin:koin-androidx-compose", version.ref = "
 
 # other
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
-stripe_android = {module = "com.stripe:stripe-android", version.ref = "stripe"}
+stripe-android = {module = "com.stripe:stripe-android", version.ref = "stripe-android"}
+stripe-server = { module = "com.stripe:stripe-java", version.ref = "stripe-server" }
 
 [bundles]
 

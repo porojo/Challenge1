@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import model.Product
 import org.porojo.moneyswift.features.state.ScreenUiState
-import repositories.ProductRepo
+import repositories.product.ProductRepo
 
 data class ProductScreenUiState(
     val screenUiState: ScreenUiState<List<Product>> = ScreenUiState.Loading

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "org.porojo.moneyswift.domain"
+    namespace = "org.porojo.moneyswift.sources"
     compileSdk = 34
 
     defaultConfig {
@@ -33,12 +33,9 @@ android {
 }
 
 dependencies {
+    // koin
     implementation(libs.bundles.koin)
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    // stripe
+    implementation(libs.stripe.server)
 }

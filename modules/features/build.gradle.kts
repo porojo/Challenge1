@@ -78,4 +78,7 @@ dependencies {
 
     // Mockk
     testImplementation(libs.mockk)
+
+    // timber
+    implementation(libs.timber)
 }

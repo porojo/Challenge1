@@ -6,6 +6,7 @@ import com.stripe.android.PaymentConfiguration
 import com.stripe.android.paymentsheet.PaymentSheet
 import com.stripe.android.paymentsheet.PaymentSheetResult
 import com.stripe.android.paymentsheet.rememberPaymentSheet
+import timber.log.Timber
 
 @Composable
 fun PaymentComponent(
@@ -20,6 +21,7 @@ fun PaymentComponent(
     PaymentConfiguration.init(LocalContext.current, publishableKey)
 
     fun onPaymentSheetResult(paymentSheetResult: PaymentSheetResult) {
+        Timber.d("Payment -> $paymentSheetResult")
         when (paymentSheetResult) {
             is PaymentSheetResult.Canceled -> onPaymentCancelled()
             is PaymentSheetResult.Failed -> onPaymentFailed()
@@ -29,9 +31,9 @@ fun PaymentComponent(
 
     val paymentSheet = rememberPaymentSheet(::onPaymentSheetResult)
     paymentSheet.presentWithPaymentIntent(
-        paymentIntentClientSecret,
-        PaymentSheet.Configuration(
-            merchantDisplayName = "MoneySwift",
+        paymentIntentClientSecret = paymentIntentClientSecret,
+        configuration = PaymentSheet.Configuration(
+            merchantDisplayName = "Money Swift",
             customer = customerConfig,
             allowsDelayedPaymentMethods = true
         )

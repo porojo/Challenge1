@@ -1,7 +1,7 @@
 package org.porojo.moneyswift.source.database
 
-import org.porojo.moneyswift.domain.R
 import org.porojo.moneyswift.source.model.Product
+import org.porojo.moneyswift.sources.R
 
 object ProductData {
     val productLists = listOf(
