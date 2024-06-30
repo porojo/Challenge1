@@ -1,0 +1,36 @@
+name: MoneySwift (CI)
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17...
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+          cache: gradle
+
+      - name: Create local.properties...
+        run: |
+          echo "stripeApiKey=${{ secrets.STRIPE_API_KEY }}" >> local.properties
+          echo "stripePublishableKey=${{ secrets.STRIPE_PUBLISHABLE_KEY }}" >> local.properties
+
+      - name: Make the Gradle Wrapper executable...
+        run: chmod +x gradlew
+
+      - name: Build the app...
+        run: ./gradlew build
+
+      - name: Run the Unit Tests...
+        run: ./gradlew test
