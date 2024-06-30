@@ -32,8 +32,6 @@ class ConfirmationScreenTest {
 
             // Actions...
             onNodeWithTag(testTag = "ConfirmationScreenButton").performClick()
-
         }
     }
-
 }

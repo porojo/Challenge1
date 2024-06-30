@@ -73,5 +73,4 @@ class ProductScreenModelTest {
         val productScreenUIState = productScreenModel.state.value
         assertEquals(ScreenUiState.Success(data = products), productScreenUIState.screenUiState)
     }
-
 }

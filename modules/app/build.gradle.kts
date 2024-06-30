@@ -70,7 +70,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    //voyager
+    // voyager
     implementation(libs.bundles.voyager)
 
     // koin
@@ -78,5 +78,4 @@ dependencies {
 
     // timber
     implementation(libs.timber)
-
 }

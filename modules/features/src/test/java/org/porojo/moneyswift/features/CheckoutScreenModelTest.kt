@@ -52,5 +52,4 @@ class CheckoutScreenModelTest {
             assertEquals(paymentConfig, paymentState.paymentConfig)
         }
     }
-
 }

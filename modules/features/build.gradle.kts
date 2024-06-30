@@ -24,7 +24,7 @@ android {
             )
         }
     }
-    buildFeatures{
+    buildFeatures {
         compose = true
     }
     compileOptions {
@@ -44,7 +44,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
-    //compose
+    // compose
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
@@ -52,10 +52,10 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    //voyager
+    // voyager
     implementation(libs.bundles.voyager)
 
-    //koin
+    // koin
     implementation(platform(libs.koin.bom))
     implementation(libs.bundles.koin)
 

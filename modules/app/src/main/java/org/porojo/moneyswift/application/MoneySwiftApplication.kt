@@ -18,11 +18,10 @@ class MoneySwiftApplication : Application() {
         Timber.plant(Timber.DebugTree())
     }
 
-    private fun setupKoin(){
+    private fun setupKoin() {
         startKoin {
             androidContext(androidContext = applicationContext)
             modules(modules = featuresKoinModule)
         }
     }
-
 }
