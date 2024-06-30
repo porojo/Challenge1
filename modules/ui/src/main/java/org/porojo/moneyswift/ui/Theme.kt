@@ -1,4 +1,4 @@
-package org.porojo.moneyswift.ui.theme
+package org.porojo.moneyswift.ui
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

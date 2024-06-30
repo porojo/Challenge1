@@ -1,4 +1,4 @@
-package org.porojo.moneyswift.ui.theme
+package org.porojo.moneyswift.ui
 
 import androidx.compose.ui.graphics.Color
 

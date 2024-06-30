@@ -1,4 +1,4 @@
-package org.porojo.moneyswift.ui.theme
+package org.porojo.moneyswift.ui
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

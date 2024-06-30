@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import cafe.adriel.voyager.navigator.Navigator
 import org.porojo.moneyswift.features.screens.products.ProductScreen
-import org.porojo.moneyswift.ui.theme.MoneySwiftTheme
+import org.porojo.moneyswift.ui.MoneySwiftTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
