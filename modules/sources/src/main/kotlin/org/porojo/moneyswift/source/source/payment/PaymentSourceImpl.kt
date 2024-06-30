@@ -10,13 +10,14 @@ import com.stripe.param.PaymentIntentCreateParams
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import org.porojo.moneyswift.source.model.PaymentDTO
+import org.porojo.moneyswift.sources.BuildConfig
 
 class PaymentSourceImpl(private val dispatcher: CoroutineDispatcher) : PaymentSource {
 
-    override suspend fun fetchPaymentInfo(amount: Long, currency: String): PaymentDTO? =
+    override suspend fun fetchPaymentInfo(amount: Long, currency: String): PaymentDTO =
         withContext(dispatcher) {
             // api key
-            Stripe.apiKey = "sk_test_51PWHBiIRrHonC9wffmfpGzkWwQhQHjvd4UmY4ALeQFT8sKasuRBBwxecbB6AXYqgV0nZovOvUjpjecHgTI8YOJbK00Al7dok8w"
+            Stripe.apiKey = BuildConfig.stripeApiKey
 
             // Create customer object
             val customerParams = CustomerCreateParams.builder().build()
@@ -42,7 +43,7 @@ class PaymentSourceImpl(private val dispatcher: CoroutineDispatcher) : PaymentSo
                 paymentIntent = paymentIntent.clientSecret,
                 ephemeralKey = ephemeralKey.secret,
                 customer = customer.id,
-                publishableKey = "pk_test_51PWHBiIRrHonC9wf5LEHkXHJPf6vCao8Mv9gkLDvBfJCc18kt2C5kk09HBwOCQCjs98XvEtFJhkFRoR9874Mtknt0036fHKMMh"
+                publishableKey = BuildConfig.stripePublishableKey
             )
         }
 

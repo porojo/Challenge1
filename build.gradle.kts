@@ -8,6 +8,7 @@ plugins {
     alias(libs.plugins.compose.compiler) apply false
     id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
     id("io.gitlab.arturbosch.detekt") version "1.23.1"
+    alias(libs.plugins.google.secrets) apply false
 }
 
 subprojects {

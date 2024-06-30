@@ -1,7 +1,7 @@
 package org.porojo.moneyswift.features
 
 import com.stripe.android.paymentsheet.PaymentSheet
-import io.mockk.coEvery
+import io.mockk.mockk
 import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -13,8 +13,11 @@ import org.junit.Before
 import org.junit.Test
 import org.porojo.moneyswift.features.screens.checkout.CheckoutScreenModel
 import org.porojo.moneyswift.features.screens.checkout.PaymentConfig
+import repositories.payment.PaymentRepository
 
 class CheckoutScreenModelTest {
+
+    private val paymentRepository: PaymentRepository = mockk(relaxed = true)
 
     private lateinit var checkoutScreenModel: CheckoutScreenModel
 
@@ -22,7 +25,7 @@ class CheckoutScreenModelTest {
     @Before
     fun setup() {
         Dispatchers.setMain(dispatcher = Dispatchers.Unconfined)
-        checkoutScreenModel = CheckoutScreenModel()
+        checkoutScreenModel = CheckoutScreenModel(repository = paymentRepository)
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
@@ -32,18 +35,22 @@ class CheckoutScreenModelTest {
     }
 
     @Test
-    fun testOnClickPay() {
-        val paymentConfig = PaymentConfig(
-            key = "publishableKey",
-            secret = "paymentIntent",
-            config = PaymentSheet.CustomerConfiguration(
-                "customer",
-                "ephemeralKey"
+    fun testOnClickPay() = runTest {
+        val amount = checkoutScreenModel.state.value.product?.productPrice?.toLong()
+        val info = amount?.let { paymentRepository.getPaymentInfo(amount = it, currency = "USD") }
+        info?.let { payment ->
+            val paymentConfig = PaymentConfig(
+                publishableKey = payment.publishableKey,
+                paymentIntentClientSecret = payment.paymentIntent,
+                customerConfig = PaymentSheet.CustomerConfiguration(
+                    payment.customer,
+                    payment.ephemeralKey
+                )
             )
-        )
-        checkoutScreenModel.onClickPay()
-        val paymentState = checkoutScreenModel.state.value
-        assertEquals(paymentConfig, paymentState.paymentConfig)
+            checkoutScreenModel.onClickPay()
+            val paymentState = checkoutScreenModel.state.value
+            assertEquals(paymentConfig, paymentState.paymentConfig)
+        }
     }
 
 }

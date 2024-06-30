@@ -14,10 +14,9 @@ import model.Product
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-import org.porojo.moneyswift.domain.R
 import org.porojo.moneyswift.features.screens.products.ProductScreenModel
 import org.porojo.moneyswift.features.state.ScreenUiState
-import repositories.ProductRepoImpl
+import repositories.product.ProductRepoImpl
 
 class ProductScreenModelTest {
 

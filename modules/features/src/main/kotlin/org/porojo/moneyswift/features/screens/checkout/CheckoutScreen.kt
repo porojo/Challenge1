@@ -49,7 +49,7 @@ class CheckoutScreen(val product: Product) : Screen {
             onClickPay = screenModel::onClickPay,
             onPaymentFinished = screenModel::onPaymentFinished
         ){
-            navigator?.push(ConfirmationScreen(it))
+            navigator?.push(ConfirmationScreen())
         }
     }
 
