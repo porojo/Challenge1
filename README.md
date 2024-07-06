@@ -8,6 +8,7 @@
   - [Architecture](#architecture-)
   - [Tools & Libraries](#tools--libraries)
   - [Look & Feel](#look--feel-)
+- [Remarks](#remarks)
 
 ## Problem
 
@@ -39,7 +40,7 @@ After a successful "payment," display a confirmation screen with a success messa
 - **UI/UX:** While advanced UI/UX is not the main focus, the app should have a basic, user-friendly interface.
 
 ## Solution
-- This is an Android app that uses the Stripe SDK (Android) to simulate digital payments...
+This is an Android app that uses the Stripe SDK (Android) to simulate digital payments...
 
 ### Architecture 🏗️
 
@@ -63,7 +64,10 @@ This app has been powered by the following Tools and Libraries:
 | `koin`    | used for Dependency Injection within the app                      | [Koin](https://insert-koin.io/)                                     |
 | `timber`  | used for comprehensive logging                                    | [Timber](https://github.com/JakeWharton/timber)                     |
 
-## Look & Feel 📱
+### Look & Feel 📱
 | Light Mode                                                                                                                         | Dark Mode                                                                                                                         |
 |------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
 | <img width="200" alt="Light Mode" src="https://github.com/porojo/Challenge1/assets/55001497/8a3b3155-d997-4a7e-a184-ccee53b57b87"> | <img width="200" alt="Dark Mode" src="https://github.com/porojo/Challenge1/assets/55001497/0b8d25eb-2632-4e15-a28c-b57bbedc862f"> |
+
+## Remarks
+This is a simple project to learn how to develop android applications as a team and what considerations to make during the development process.
