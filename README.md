@@ -1,13 +1,13 @@
 # Challenge #1 🤑
 
-[Problem](#problem)
-    [Description](#description)
-    [Requirements](#requirements)
-    [Evaluation](#evaluation-criteria)
-[Solution](#solution)
-    [Architecture](#architecture-)
-    [Tools & Libraries](#tools--libraries)
-    [Look & Feel](#look--feel-)
+- [Problem](#problem)
+    - [Description](#description)
+    - [Requirements](#requirements)
+    - [Evaluation](#evaluation-criteria)
+- [Solution](#solution)
+  - [Architecture](#architecture-)
+  - [Tools & Libraries](#tools--libraries)
+  - [Look & Feel](#look--feel-)
 
 ## Problem
 
